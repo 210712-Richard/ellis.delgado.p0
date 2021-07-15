@@ -19,7 +19,9 @@ public class User {
 	private String superhero;
 	//I need to create a Usertype class so that we can differentiate the two
 	private UserType type;
-	private String collection; 
+	// how do i add to the user's collection
+			//I'd have to have an array for the comics
+	private LinkedList<ComicObj> collection; 
 	
 	//now we gotta use a constructor to establish user type
 	public User() {
@@ -38,5 +40,10 @@ public class User {
 		
 	}
 	//now we can create functions to call on when retrieving user info 
+	
+	public String addComic() {
+		
+	return ;
+	}
 	
 }
