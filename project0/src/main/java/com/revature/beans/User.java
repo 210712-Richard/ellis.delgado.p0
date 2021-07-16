@@ -1,5 +1,7 @@
 package com.revature.beans;
 
+import java.util.List;
+
 //so here i want to establish my user class
 // what will it be?
 /*
@@ -21,7 +23,7 @@ public class User {
 	private UserType type;
 	// how do i add to the user's collection
 			//I'd have to have an array for the comics
-	private LinkedList<ComicObj> collection; 
+	private List<ComicObj> collection; 
 	
 	//now we gotta use a constructor to establish user type
 	public User() {
@@ -30,13 +32,13 @@ public class User {
 		
 	}
 	
-	public User(String username, Integer id, String email, String superhero, String collection) {
+	public User(String username, Integer id, String email, String superhero) {
 		this();
 		this.username = username;
 		this.id = id;
 		this.email = email;
 		this.superhero = superhero;
-		this.collection = collection;
+//		this.collection = collection;
 		
 	}
 	//now we can create functions to call on when retrieving user info 
