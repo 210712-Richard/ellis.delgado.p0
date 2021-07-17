@@ -21,7 +21,7 @@
  
 ## What do I need to do?
 
-* Need to make a user
+* Need to make a user	X
 * need to make a manager
 	- use a separate option choice to distinguish the two
 	
