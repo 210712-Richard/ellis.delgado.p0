@@ -1,5 +1,36 @@
 package com.revature.data;
 
-public class DataSerializer {
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.LinkedList;
+import java.util.List;
 
+public class DataSerializer<T>{
+// using this class to read and write to a file
+	
+	public List<T> readObjectsFromFile(String filename){
+		List<T> objects = null;
+		try(ObjectInputStream o = new ObjectInputStream(new FileInputStream(filename));){
+			objects = (LinkedList<T>) o.readObject();
+			System.out.println("File has been read");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("Read Objects from file method");
+		}
+		
+		
+		return objects;
+	}
+	public void writeObjectsToFile(List<T> objects, String filename) {
+		try (ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream(filename));){
+			o.writeObject(objects);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			System.out.println("Write objects to file method");
+		}
+	}
 }
