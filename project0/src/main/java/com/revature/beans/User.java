@@ -1,5 +1,6 @@
 package com.revature.beans;
 
+import java.io.Serializable;
 import java.util.List;
 import com.revature.beans.UserType;
 //so here i want to establish my user class
@@ -13,8 +14,9 @@ import com.revature.beans.UserType;
  * 	- type of user (manager or customer)
  * 			- do i distinguish the manager and customer here or do i Just builder the customer for now?
  */
-public class User {
+public class User implements Serializable{
 	
+	private static final long serialVersionUID = -6426075925303078798L;
 	private String username;
 	private Integer id;
 	private String email;

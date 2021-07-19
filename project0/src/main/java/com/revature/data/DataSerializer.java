@@ -13,6 +13,7 @@ public class DataSerializer<T>{
 	public List<T> readObjectsFromFile(String filename){
 		List<T> objects = null;
 		try(ObjectInputStream o = new ObjectInputStream(new FileInputStream(filename));){
+			// using a linkedlist since i know that i will be changing the size of the list
 			objects = (LinkedList<T>) o.readObject();
 			System.out.println("File has been read");
 		}catch (Exception e) {
