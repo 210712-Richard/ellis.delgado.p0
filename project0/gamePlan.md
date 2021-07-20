@@ -34,3 +34,11 @@
  ...	| buy a comic
  Add to inventory | Create Account
  ... | Select a comic 
+ 
+ 7/20
+ 	
+## What do I need to do today?
+
+* create a register user menu
+* write users to file
+* create comics array
