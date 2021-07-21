@@ -85,22 +85,56 @@ public class Menu {
 				switch(loggedUser.getType()) {
 				case Customer:
 					System.out.println("Now entering the customer menu!");
-					customerMenu();
+					customer(loggedUser);
 					break;
 				case Manager: 
 					System.out.println("Now entering the Manager portal!");
-					managerMenu();
+					manager(loggedUser);
 					break;
 				}
 				
 		}
 	}
 	
+
+
 	public void registerMenu() {
 		
 	}
+	public void customer(User loggedUser) {
+		
+		customerLoop:
+			while(true) {
+				switch (customerMenu()) {
+				case 1: 
+					System.out.println("Viewing inventory");
+					System.out.println("Will add function later");
+					break;
+					
+				case 2:
+					System.out.println("Viewing your comics");
+					System.out.println("Will add function later");
+					break;
+				
+				case 3: 
+					System.out.println("Retrieving Account Info");
+					String name = loggedUser.getUsername();
+					String email = loggedUser.getEmail();
+					String superhero = loggedUser.getSuperhero();
+					String comicBook = loggedUser.getComic();
+					
+					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + ".");
+					break;
+					
+				case 4: 
+					System.out.println("Adios Muchacho!");
+					break customerLoop;
+				}
+					
+			}
+	}
 	public int customerMenu() {
-		System.out.println("Welcome back" +);
+
 		System.out.println("Please select an option: ");
 		System.out.println("\t1. View Comics");
 		System.out.println("\t2. View your comics");
@@ -109,9 +143,19 @@ public class Menu {
 		int choice = select();
 		return choice;
 	}
+	
+	private void manager(User loggedUser) {
+		// TODO Auto-generated method stub
+		
+	}
 	public int managerMenu() {
 //		return null
-		System.out.println("\t4. Return Users");
+		System.out.println("Hi! Welcome to the Comic Shop!");
+		System.out.println("\t1. View Comics");
+		System.out.println("\t2. View your comics");
+		System.out.println("\t3. View your account info");
+		System.out.println("\t4. View all Users");
+		System.out.println("\t5. Leave Shop");
 		int choice = select();
 		return choice;
 	};
