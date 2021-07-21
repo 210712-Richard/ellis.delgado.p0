@@ -115,6 +115,7 @@ public class Menu {
 		
 	
 	}
+	// Customer Portal
 	public void customer(User loggedUser) {
 		
 		customerLoop:
@@ -147,6 +148,8 @@ public class Menu {
 					
 			}
 	}
+	//Option Menu for customer
+	
 	public int customerMenu() {
 
 		System.out.println("Please select an option: ");
@@ -157,6 +160,9 @@ public class Menu {
 		int choice = select();
 		return choice;
 	}
+	
+	
+	//Manager Portal 
 	
 	private void manager(User loggedUser) {
 		managerLoop:
@@ -196,6 +202,8 @@ public class Menu {
 			}
 		
 	}
+	// Option menu for manager
+	
 	public int managerMenu() {
 //		return null
 		System.out.println("Hi! Welcome to the Comic Shop!");
