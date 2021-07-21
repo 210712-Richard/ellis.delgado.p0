@@ -1,17 +1,21 @@
 package com.revature.menu;
 
+import java.util.List;
 import java.util.Scanner;
+
 
 
 import com.revature.beans.ComicObj;
 import com.revature.util.SingletonScanner;
 import com.revature.beans.User;
 import com.revature.services.UserService;
+import com.revature.data.UserDAO;
 
 
 public class Menu {
 	
 	private UserService us = new UserService();
+	private UserDAO ud = new UserDAO();
 	
 	public void startApp() {
 		mainLoop: while(true) {
@@ -30,16 +34,28 @@ public class Menu {
 			 	case 3 : 
 			 		System.out.println("See ya!");
 			 		break mainLoop;
+//			 	case 4: 
+//			 		System.out.println("Return users");
+//			 		returnUsers();
+//			 		break;
 			}
 		}
 	}
 	
+	private void returnUsers() {
+		// TODO Auto-generated method stub
+		List<User> u =  ud.getUser();
+		System.out.println("Users: "+ u);
+		
+	}
+
 	private int mainMenu() {
 		System.out.println("Hi! Welcome to the Comic Shop!");
 		System.out.println("Please select an option: ");
 		System.out.println("\t1. Login");
 		System.out.println("\t2. Create an Account");
 		System.out.println("\t3. Leave Shop");
+		
 		int choice = select();
 		return choice;
 		
@@ -57,7 +73,7 @@ public class Menu {
 		//if user login is true
  		//run playerMenu or ownerMenu
 		User u = us.login(userName);
-		User e = us.login(emailInput);
+		String e = us.emailLogin(emailInput);
 		if(u == null) {
 			System.out.println("Incorrect name. Please try again");
 		}
@@ -65,7 +81,7 @@ public class Menu {
 			System.out.println("Incorrect email. Please try again.");
 		}else {
 			User loggedUser = u;
-			System.out.println("Welcome: "+ u.getUsername());
+			System.out.println("Welcome back"+ u.getUsername()+ "!");
 				switch(loggedUser.getType()) {
 				case Customer:
 					System.out.println("Now entering the customer menu!");
@@ -84,18 +100,20 @@ public class Menu {
 		
 	}
 	public int customerMenu() {
-		System.out.println("Welcome back");
+		System.out.println("Welcome back" +);
 		System.out.println("Please select an option: ");
 		System.out.println("\t1. View Comics");
 		System.out.println("\t2. View your comics");
-		System.out.println("\t3. Leave Shop");
+		System.out.println("\t3. View your account info");
+		System.out.println("\t4. Leave Shop");
 		int choice = select();
 		return choice;
 	}
 	public int managerMenu() {
 //		return null
-		int van = 0;
-		return van;
+		System.out.println("\t4. Return Users");
+		int choice = select();
+		return choice;
 	};
 	
 	private int select() {

@@ -45,6 +45,13 @@ public class UserDAO {
 		}
 		return null;
 	}
+	public String getEmail(String email) {
+		for(User user: users) {
+			if(user.getEmail().equals(email))
+				return email;
+		}
+		return null;
+	}
 	public void writeToFile() {
 		new DataSerializer<User>().writeObjectsToFile(users, filename);
 	}
