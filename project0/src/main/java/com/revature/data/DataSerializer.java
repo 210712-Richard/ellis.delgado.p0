@@ -14,7 +14,7 @@ public class DataSerializer<T>{
 		List<T> objects = null;
 		try(ObjectInputStream o = new ObjectInputStream(new FileInputStream(filename));){
 			// using a linkedlist since i know that i will be changing the size of the list
-			objects = (LinkedList<T>) o.readObject();
+			objects = (List<T>) o.readObject();
 			System.out.println("File has been read");
 		}catch (Exception e) {
 			e.printStackTrace();
