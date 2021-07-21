@@ -96,5 +96,10 @@ public class User implements Serializable{
 	
 	}
 	
+	@Override
+	public String toString() {
+		return "Username: "+ username + ", id"+ id + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comic + "";
+		
+	}
 	
 }

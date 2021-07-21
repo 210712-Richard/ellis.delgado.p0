@@ -104,11 +104,15 @@ public class Menu {
 		String superHero = myObj.nextLine();
 		System.out.println("Favorite Comic or Issue: ");
 		String comicBook = myObj.nextLine();
-		System.out.println("input: " + userName +" "+ emailInput );
+//		System.out.println("Are you a customer or manager?");
+//		String accountType = myObj.nextLine();
+//		if ()){}
 		
-	User newUser = us.register(userName, emailInput, superHero, comicBook);
+		User newUser = us.register(userName, emailInput, superHero, comicBook);
 		System.out.println("New User created!");
 		System.out.println("User: " + newUser);
+//		
+		
 	
 	}
 	public void customer(User loggedUser) {

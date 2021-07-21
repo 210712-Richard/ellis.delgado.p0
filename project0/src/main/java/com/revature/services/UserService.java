@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.beans.User;
+import com.revature.beans.UserType;
 import com.revature.data.UserDAO;
 
 public class UserService {
@@ -30,8 +31,15 @@ public class UserService {
 		u.setEmail(email);
 		u.setSuperhero(superhero);
 		u.setComic(comic);
+//		u.setType(null);
 		ud.addUser(u);
 		ud.writeToFile();
 		return u;
 	}
+	
+//	public UserType registerType(UserType type) {
+//		u.setTy
+//		return type;
+//		
+//	}
 }
