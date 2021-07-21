@@ -27,6 +27,7 @@ public class User implements Serializable{
 			//I'd have to have an array for the comics
 //	private List<ComicObj> collection; 
 	//creating a field for comics
+//	public ComicObj[] collection = new ComicObj[5];
 	private String comic;
 	
 	//now we gotta use a constructor to establish user type
