@@ -76,7 +76,7 @@ public class Menu {
 			System.out.println("Incorrect email. Please try again.");
 		}else {
 			User loggedUser = u;
-			System.out.println("Welcome back"+ u.getUsername()+ "!");
+			System.out.println("Welcome back "+ u.getUsername()+ "!");
 				switch(loggedUser.getType()) {
 				case Customer:
 					System.out.println("Now entering the customer menu!");
@@ -94,7 +94,22 @@ public class Menu {
 
 
 	public void registerMenu() {
+		Scanner myObj = new Scanner(System.in);
+		System.out.println("Hi! Please enter your information!");
+		System.out.println("Username:");
+		String userName = myObj.nextLine();
+		System.out.println("Email");
+		String emailInput = myObj.nextLine();
+		System.out.println("Favorite Superhero: ");
+		String superHero = myObj.nextLine();
+		System.out.println("Favorite Comic or Issue: ");
+		String comicBook = myObj.nextLine();
+		System.out.println("input: " + userName +" "+ emailInput );
 		
+	User newUser = us.register(userName, emailInput, superHero, comicBook);
+		System.out.println("New User created!");
+		System.out.println("User: " + newUser);
+	
 	}
 	public void customer(User loggedUser) {
 		
@@ -202,6 +217,7 @@ public class Menu {
 			choice = Integer.parseInt(scan.nextLine());
 		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("Please enter a number");
 			choice = -1;
 		};
 		return choice;

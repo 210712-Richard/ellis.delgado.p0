@@ -42,3 +42,6 @@
 * create a register user menu
 * write users to file
 * create comics array
+	- how can I do this?
+	- should i make another object (Inventory ?)
+	- give it an array of comics?

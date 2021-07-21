@@ -24,7 +24,7 @@ public class UserService {
 	
 	
 	// creating a new user
-	public void register(String username, String email, String superhero, String comic) {
+	public User register(String username, String email, String superhero, String comic) {
 		User u = new User();
 		u.setUsername(username);
 		u.setEmail(email);
@@ -32,5 +32,6 @@ public class UserService {
 		u.setComic(comic);
 		ud.addUser(u);
 		ud.writeToFile();
+		return u;
 	}
 }
