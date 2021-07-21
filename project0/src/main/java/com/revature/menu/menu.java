@@ -9,11 +9,26 @@ public class Menu {
 	
 	public void startApp() {
 		mainLoop: while(true) {
-			switch(loginMenu)
+			 switch(mainMenu()) {
+			 	case 1: 
+			 		System.out.println("input method");
+			 		inputMenu();
+			 		
+			 		break;
+			 	case 2 :
+			 	
+			 		registerMenu();
+			 		System.out.println("Register method");
+			 		break;
+			 		
+			 	case 3 : 
+			 		System.out.println("See ya!");
+			 		break mainLoop;
+			}
 		}
 	}
 	
-	private int loginMenu() {
+	private int mainMenu() {
 		System.out.println("Hi! Welcome to the Comic Shop!");
 		System.out.println("Please select an option: ");
 		System.out.println("\t1. Login");
@@ -33,6 +48,10 @@ public class Menu {
 		System.out.println("Email");
 		String emailInput = myObj.nextLine();
 		System.out.println("input: " + userName +" "+ emailInput );
+	}
+	
+	public void registerMenu() {
+		
 	}
 	
 	private int select() {

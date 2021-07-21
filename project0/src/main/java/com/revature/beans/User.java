@@ -25,7 +25,7 @@ public class User implements Serializable{
 	private UserType type;
 	// how do i add to the user's collection
 			//I'd have to have an array for the comics
-	private List<ComicObj> collection; 
+//	private List<ComicObj> collection; 
 	//creating a field for comics
 	private String comic;
 	
@@ -36,12 +36,13 @@ public class User implements Serializable{
 		
 	}
 	
-	public User(String username, Integer id, String email, String superhero, String comic) {
+	public User( Integer id, String username,String email, String superhero, String comic) {
 		this();
-		this.username = username;
 		this.id = id;
+		this.username = username;
 		this.email = email;
 		this.superhero = superhero;
+		this.comic = comic;
 //		this.collection = collection;
 		
 	}
