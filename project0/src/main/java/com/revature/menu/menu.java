@@ -3,7 +3,10 @@ package com.revature.menu;
 import java.util.Scanner;
 
 import com.revature.beans.ComicObj;
+import com.revature.util.SingletonScanner;
 import com.revature.beans.User;
+import com.revature.services.UserService;
+
 
 public class Menu {
 	
