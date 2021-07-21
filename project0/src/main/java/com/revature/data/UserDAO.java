@@ -45,4 +45,7 @@ public class UserDAO {
 		}
 		return null;
 	}
+	public void writeToFile() {
+		new DataSerializer<User>().writeObjectsToFile(users, filename);
+	}
 }
