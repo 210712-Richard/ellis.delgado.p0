@@ -33,6 +33,10 @@ public class UserDAO {
 	public List<User> getUser(){
 		return users;
 	}
+	public String getAllUsers(){
+		String accounts = users.toString();
+		return accounts;
+	}
 	public User getUser(String username) {
 //		for(int user = users[0]; user < users.size(); user++) {
 //			if (user.getUsername().equals(username)) {

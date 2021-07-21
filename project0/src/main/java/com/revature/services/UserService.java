@@ -17,6 +17,11 @@ public class UserService {
 		String e = ud.getEmail(email);
 		return e;
 	}
+	public User getAll() {
+		User all = (User) ud.getUser();
+		return all;
+	}
+	
 	
 	// creating a new user
 	public void register(String username, String email, String superhero, String comic) {

@@ -42,12 +42,7 @@ public class Menu {
 		}
 	}
 	
-	private void returnUsers() {
-		// TODO Auto-generated method stub
-		List<User> u =  ud.getUser();
-		System.out.println("Users: "+ u);
-		
-	}
+	
 
 	private int mainMenu() {
 		System.out.println("Hi! Welcome to the Comic Shop!");
@@ -123,7 +118,7 @@ public class Menu {
 					String superhero = loggedUser.getSuperhero();
 					String comicBook = loggedUser.getComic();
 					
-					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + ".");
+					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
 					break;
 					
 				case 4: 
@@ -145,7 +140,41 @@ public class Menu {
 	}
 	
 	private void manager(User loggedUser) {
-		// TODO Auto-generated method stub
+		managerLoop:
+			while(true) {
+				switch (managerMenu()) {
+				case 1: 
+					System.out.println("Viewing inventory");
+					System.out.println("Will add function later");
+					break;
+					
+				case 2:
+					System.out.println("Viewing your comics");
+					System.out.println("Will add function later");
+					break;
+				
+				case 3: 
+					System.out.println("Retrieving Account Info");
+					String name = loggedUser.getUsername();
+					String email = loggedUser.getEmail();
+					String superhero = loggedUser.getSuperhero();
+					String comicBook = loggedUser.getComic();
+					
+					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
+					break;
+					
+				case 4: 
+					System.out.println("Retrieving All Users");
+					//this isn't return user data as of yet
+					returnUsers();
+					break;
+					
+				case 5: 
+					System.out.println("Adios Muchacho!");
+					break managerLoop;
+				}
+					
+			}
 		
 	}
 	public int managerMenu() {
@@ -159,6 +188,12 @@ public class Menu {
 		int choice = select();
 		return choice;
 	};
+	private void returnUsers() {
+		// TODO Auto-generated method stub
+		String u =  ud.getAllUsers();
+		System.out.println("Users: "+ u);
+		
+	}
 	
 	private int select() {
 		int choice;
