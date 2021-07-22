@@ -2,6 +2,7 @@ package com.revature.beans;
 
 //import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Inventory  {
 	public static void InventoryArray() {
@@ -20,5 +21,16 @@ public class Inventory  {
 //	};
 	
 	}
+
+	public LinkedList<String> get(List inventory) {
+		return null;
+		
+		
+	}
+//	@Override
+//	public String toString() {
+//		return inventory;
+//		
+//	}
 	
 }

@@ -6,16 +6,18 @@ import java.util.Scanner;
 
 
 import com.revature.beans.ComicObj;
-import com.revature.util.SingletonScanner;
+import com.revature.beans.Inventory;
 import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.data.UserDAO;
+import com.revature.util.SingletonScanner;
 
 
 public class Menu {
 	
 	private UserService us = new UserService();
 	private UserDAO ud = new UserDAO();
+	private Inventory inv = new Inventory();
 	
 	public void startApp() {
 		mainLoop: while(true) {
@@ -233,6 +235,19 @@ public class Menu {
 			choice = -1;
 		};
 		return choice;
+	}
+
+
+
+	public Inventory getInv() {
+		inv.get()
+		return inv;
+	}
+
+
+
+	public void setInv(Inventory inv) {
+		this.inv = inv;
 	}
 
 }
