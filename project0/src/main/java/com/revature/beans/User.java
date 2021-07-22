@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.revature.beans.UserType;
+
 //so here i want to establish my user class
 // what will it be?
 /*
