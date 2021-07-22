@@ -1,6 +1,7 @@
 package com.revature.beans;
 
-//creating a comic object that can be stored into an array
-public class ComicObj {
-	String Comic = "";
+import java.io.Serializable;
+
+public interface ComicObj extends Serializable{
+	String comic = "";
 }
