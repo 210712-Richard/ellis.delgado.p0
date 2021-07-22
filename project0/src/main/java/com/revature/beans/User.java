@@ -1,7 +1,10 @@
 package com.revature.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 import com.revature.beans.UserType;
 //so here i want to establish my user class
 // what will it be?
@@ -23,12 +26,9 @@ public class User implements Serializable{
 	private String superhero;
 	//I need to create a Usertype class so that we can differentiate the two
 	private UserType type;
-	// how do i add to the user's collection
-			//I'd have to have an array for the comics
-//	private List<ComicObj> collection; 
-	//creating a field for comics
-//	public ComicObj[] collection = new ComicObj[5];
 	private String comic;
+	private List<ComicObj>collection; 
+	
 	
 	//now we gotta use a constructor to establish user type
 	public User() {
@@ -44,10 +44,12 @@ public class User implements Serializable{
 		this.email = email;
 		this.superhero = superhero;
 		this.comic = comic;
-//		this.collection = collection;
+		this.collection = new ArrayList<ComicObj>();
 		
 	}
 	//now we can create functions to call on when retrieving user info 
+
+	
 
 	public String getUsername() {
 		return username;
@@ -88,18 +90,50 @@ public class User implements Serializable{
 	public void setType(UserType type) {
 		this.type = type;
 	}
+
 	public String getComic() {
 		return comic;
 	}
+
 	public void setComic(String comic) {
 		this.comic = comic;
-	
 	}
+
+	public List<ComicObj> getCollection() {
+		return collection;
+	}
+
+	public void setCollection(List<ComicObj> collection) {
+		this.collection = collection;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(collection, other.collection) && Objects.equals(comic, other.comic)
+				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
+				&& Objects.equals(superhero, other.superhero) && type == other.type
+				&& Objects.equals(username, other.username);
+	}
+
 	@Override
 	public String toString() {
-		return "Username: "+ username + ", id"+ id + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comic + "";
-		
+		return "User [username=" + username + ", id=" + id + ", email=" + email + ", superhero=" + superhero + ", type="
+				+ type + ", comic=" + comic + ", collection=" + collection + "]";
 	}
+
+	
 	
 }

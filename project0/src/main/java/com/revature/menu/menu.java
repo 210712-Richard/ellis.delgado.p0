@@ -239,10 +239,10 @@ public class Menu {
 
 
 
-	public Inventory getInv() {
-		inv.get()
-		return inv;
-	}
+//	public Inventory getInv() {
+//		inv.get()
+//		return inv;
+//	}
 
 
 
