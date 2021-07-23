@@ -45,3 +45,15 @@
 	- how can I do this?
 	- should i make another object (Inventory ?)
 	- give it an array of comics?
+
+
+	7/23
+	
+# Gameplan 
+* Create collection / inventory
+	- make functions for each
+	- add those functions to user services
+	
+* Add testing
+* Add Logging
+* Start converting to Javalin
