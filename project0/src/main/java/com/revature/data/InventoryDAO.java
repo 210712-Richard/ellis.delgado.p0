@@ -38,5 +38,33 @@ public class InventoryDAO {
 		}
 		
 	}
-
+	public void addComic(ComicObj comic) {
+		comic.setId((long)comics.size());
+		comics.add(comic);
+	}
+	public List<ComicObj> getComics(){
+		return comics;
+	}
+	public ComicObj getComic(Long id) {
+		return comics.stream()
+				.filter((g)-> g.getId().equals(id))
+				.findFirst()
+				.orElse(null);
+	}
+	public ComicObj getComicByName(String name) {
+		return comics.stream()
+				.filter((g)-> g.getName().equals(name))
+				.findFirst()
+				.orElse(null);
+	}
+	public ComicObj getComicByGenre(String genre) {
+		return comics.stream()
+				.filter((g)-> g.getGenre().equals(genre))
+				.findFirst()
+				.orElse(null);
+	}
+	public void writeToFile() {
+		new DataSerializer<ComicObj>().writeObjectsToFile(comics, filename);
+	}
+	
 }
