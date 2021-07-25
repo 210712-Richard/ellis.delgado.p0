@@ -6,11 +6,11 @@ public interface ComicObj extends Serializable{
 	String comic = "";
 	
 	Long getId();
-	void setId(long size);
+	void setId(Long id);
 	
 	String getName();
-	void getName(String name);
+	void setName(String name);
 	
 	String getGenre();
-	void getGenre(String genre);
+	void setGenre(String genre);
 }
