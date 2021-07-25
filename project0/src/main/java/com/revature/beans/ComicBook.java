@@ -2,7 +2,7 @@ package com.revature.beans;
 
 //import java.util.Objects;
 
-import com.revature.beans.ComicObj;
+
 
 
 public class ComicBook implements ComicObj{
