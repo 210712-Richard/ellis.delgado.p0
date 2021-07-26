@@ -10,13 +10,14 @@ import com.revature.beans.Inventory;
 import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.data.UserDAO;
+import com.revature.data.UserDAOFile;
 import com.revature.util.SingletonScanner;
 
 
 public class Menu {
 	
 	private UserService us = new UserService();
-	private UserDAO ud = new UserDAO();
+	private UserDAOFile ud = new UserDAOFile();
 	private Inventory inv = new Inventory();
 	
 	public void startApp() {

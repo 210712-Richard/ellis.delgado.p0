@@ -1,13 +1,15 @@
 package com.revature.services;
 
+import com.revature.beans.ComicObj;
 import com.revature.beans.User;
 import com.revature.beans.UserType;
 import com.revature.data.UserDAO;
+import com.revature.data.UserDAOFile;
 
 public class UserService {
 // adding functionality to the users.
 	
-	public UserDAO ud = new UserDAO();
+	public UserDAOFile ud = new UserDAOFile();
 	
 	//user login
 	public User login(String name) {
@@ -19,7 +21,7 @@ public class UserService {
 		return e;
 	}
 	public User getAll() {
-		User all = (User) ud.getUser();
+		User all = (User) ud.getUsers();
 		return all;
 	}
 	
@@ -37,9 +39,10 @@ public class UserService {
 		return u;
 	}
 	
-//	public UserType registerType(UserType type) {
-//		u.setTy
-//		return type;
+//	public ComicObj pickComic(User user) {
+//		ComicObj pickedComic = null;
 //		
+////		List<ComicObj> comics = 
 //	}
+//	
 }
