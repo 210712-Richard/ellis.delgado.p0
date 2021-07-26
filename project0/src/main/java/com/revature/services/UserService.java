@@ -1,15 +1,20 @@
 package com.revature.services;
 
+import java.util.List;
+
 import com.revature.beans.ComicObj;
+
 import com.revature.beans.User;
 import com.revature.beans.UserType;
+import com.revature.data.InventoryDAO;
 import com.revature.data.UserDAO;
-import com.revature.data.UserDAOFile;
+
 
 public class UserService {
 // adding functionality to the users.
 	
-	public UserDAOFile ud = new UserDAOFile();
+	public UserDAO ud = new UserDAO();
+	public InventoryDAO invDAO = new InventoryDAO();
 	
 	//user login
 	public User login(String name) {
@@ -39,10 +44,24 @@ public class UserService {
 		return u;
 	}
 	
-//	public ComicObj pickComic(User user) {
-//		ComicObj pickedComic = null;
-//		
-////		List<ComicObj> comics = 
-//	}
-//	
+	public ComicObj pickComic(User user, String comicName, String genre) {
+		//comicObj expects an id, a name, and a genre
+		ComicObj choice = null;
+		
+	
+	List<ComicObj> comics = invDAO.getComics();
+	 choice = invDAO.getComicByName(comicName);
+	if (choice.getName() != comics.get(comics.size()).getName()) {
+		System.out.println("Sorry, that comic isn't available!");
+		return null;
+	}
+	// how do i set the new comic?
+	choice.setGenre(genre);
+	choice.setId((long) user.getCollection().size());
+	user.getCollection().add(choice);
+	ud.writeToFile();
+	
+	return choice;
+	}
+	
 }
