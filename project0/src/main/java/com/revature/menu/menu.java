@@ -9,6 +9,7 @@ import com.revature.beans.ComicObj;
 import com.revature.beans.Inventory;
 import com.revature.beans.User;
 import com.revature.services.UserService;
+import com.revature.data.InventoryDAO;
 import com.revature.data.UserDAO;
 import com.revature.data.UserDAO;
 import com.revature.util.SingletonScanner;
@@ -18,7 +19,7 @@ public class Menu {
 	
 	private UserService us = new UserService();
 	private UserDAO ud = new UserDAO();
-	private Inventory inv = new Inventory();
+	private InventoryDAO invDAO = new InventoryDAO();
 	
 	public void startApp() {
 		mainLoop: while(true) {
@@ -126,7 +127,7 @@ public class Menu {
 				switch (customerMenu()) {
 				case 1: 
 					System.out.println("Viewing inventory");
-					System.out.println("Will add function later");
+					getInventory();
 					break;
 					
 				case 2:
@@ -172,8 +173,8 @@ public class Menu {
 			while(true) {
 				switch (managerMenu()) {
 				case 1: 
-					System.out.println("Viewing inventory");
-					System.out.println("Will add function later");
+					
+					getInventory();
 					break;
 					
 				case 2:
@@ -237,6 +238,12 @@ public class Menu {
 		};
 		return choice;
 	}
+	private void getInventory(){
+		List<ComicObj> comics = invDAO.getComics();
+		String comicList = comics.toString();
+		System.out.println("Current Inventory: " + comicList);
+		
+	}
 
 
 
@@ -247,8 +254,8 @@ public class Menu {
 
 
 
-	public void setInv(Inventory inv) {
-		this.inv = inv;
-	}
+//	public void setInv(Inventory inv) {
+//		this.inv = inv;
+//	}
 
 }
