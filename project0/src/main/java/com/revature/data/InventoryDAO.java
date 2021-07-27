@@ -4,6 +4,7 @@ package com.revature.data;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import com.revature.beans.ComicObj;
 import com.revature.beans.comicInventory;
@@ -67,5 +68,6 @@ public class InventoryDAO {
 	public void writeToFile() {
 		new DataSerializer<ComicObj>().writeObjectsToFile(comics, filename);
 	}
+	
 	
 }

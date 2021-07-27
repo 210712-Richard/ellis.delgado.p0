@@ -132,7 +132,7 @@ public class Menu {
 					
 				case 2:
 					System.out.println("Viewing your comics");
-					System.out.println("Will add function later");
+					getCurrentCollection(loggedUser);
 					break;
 				
 				case 3: 
@@ -187,7 +187,7 @@ public class Menu {
 					
 				case 2:
 					System.out.println("Viewing your comics");
-					System.out.println("Will add function later");
+					getCurrentCollection(loggedUser);
 					break;
 				
 				case 3: 
@@ -256,6 +256,10 @@ public class Menu {
 		};
 		return choice;
 	}
+	private void getCurrentCollection(User loggedUser){
+		us.getCurCollection(loggedUser);
+		
+	}
 	private void getCurrentInventory(){
 		List<ComicObj> comics = invDAO.getComics();
 		String comicList = comics.toString();
@@ -268,14 +272,13 @@ public class Menu {
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Comic Name");
 		String comicName = myObj.nextLine();
-		System.out.println("Genre");
-		String genreInput = myObj.nextLine();
-		if(comicName == null || genreInput == null) {
-			System.out.println("Please input a name and genre");
+	
+		if(comicName == null ) {
+			System.out.println("Please input a name");
 			return null;
 		}
 		
-		Object newComic = us.pickComic(loggedUser, comicName, genreInput);
+		Object newComic = us.pickComic(loggedUser, comicName);
 		return newComic;
 		
 	}
