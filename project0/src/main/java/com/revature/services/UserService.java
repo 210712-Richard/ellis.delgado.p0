@@ -13,7 +13,7 @@ import com.revature.data.InventoryDAO;
 import com.revature.data.UserDAO;
 
 
-public class UserService {
+public class UserService implements UserSerInterface{
 // adding functionality to the users.
 	private Logger log = LogManager.getLogger(UserService.class);
 	public ComicDAO comDAO = new ComicDAO();
@@ -69,5 +69,7 @@ public class UserService {
 	
 	return choice;
 	}
+	
+
 	
 }
