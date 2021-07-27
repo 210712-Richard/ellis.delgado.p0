@@ -51,7 +51,7 @@ public class UserService {
 //		u.setType(null);
 		ud.addUser(u);
 		ud.writeToFile();
-		log.trace(u);
+		log.debug(u);
 		return u;
 		
 	}
