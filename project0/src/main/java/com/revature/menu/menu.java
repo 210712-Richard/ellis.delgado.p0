@@ -127,7 +127,7 @@ public class Menu {
 				switch (customerMenu()) {
 				case 1: 
 					System.out.println("Viewing inventory");
-					getInventory();
+					getCurrentInventory();
 					break;
 					
 				case 2:
@@ -144,8 +144,15 @@ public class Menu {
 					
 					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
 					break;
-					
 				case 4: 
+					System.out.println("Here are the current comics");
+					getCurrentInventory();
+					System.out.println("Please enter the name and genre you want!");
+					addComictoCollection(loggedUser);
+					getCurrentInventory();
+					break;
+					
+				case 5: 
 					System.out.println("Adios Muchacho!");
 					break customerLoop;
 				}
@@ -160,7 +167,8 @@ public class Menu {
 		System.out.println("\t1. View Comics");
 		System.out.println("\t2. View your comics");
 		System.out.println("\t3. View your account info");
-		System.out.println("\t4. Leave Shop");
+		System.out.println("\t4. Get a comic");
+		System.out.println("\t5. Leave Shop");
 		int choice = select();
 		return choice;
 	}
@@ -174,7 +182,7 @@ public class Menu {
 				switch (managerMenu()) {
 				case 1: 
 					
-					getInventory();
+					getCurrentInventory();
 					break;
 					
 				case 2:
@@ -199,6 +207,13 @@ public class Menu {
 					break;
 					
 				case 5: 
+					System.out.println("Here are the current comics");
+					getCurrentInventory();
+					System.out.println("Please enter the name and genre you want!");
+					addComictoCollection(loggedUser);
+					getCurrentInventory();
+					break;
+				case 6: 
 					System.out.println("Adios Muchacho!");
 					break managerLoop;
 				}
@@ -208,6 +223,8 @@ public class Menu {
 	}
 	// Option menu for manager
 	
+
+
 	public int managerMenu() {
 //		return null
 		System.out.println("Hi! Welcome to the Comic Shop!");
@@ -215,7 +232,8 @@ public class Menu {
 		System.out.println("\t2. View your comics");
 		System.out.println("\t3. View your account info");
 		System.out.println("\t4. View all Users");
-		System.out.println("\t5. Leave Shop");
+		System.out.println("\t5. Get a comic");
+		System.out.println("\t6. Leave Shop");
 		int choice = select();
 		return choice;
 	};
@@ -238,12 +256,30 @@ public class Menu {
 		};
 		return choice;
 	}
-	private void getInventory(){
+	private void getCurrentInventory(){
 		List<ComicObj> comics = invDAO.getComics();
 		String comicList = comics.toString();
 		System.out.println("Current Inventory: " + comicList);
 		
 	}
+
+	private Object addComictoCollection(User loggedUser) {
+		
+		Scanner myObj = new Scanner(System.in);
+		System.out.println("Comic Name");
+		String comicName = myObj.nextLine();
+		System.out.println("Genre");
+		String genreInput = myObj.nextLine();
+		if(comicName == null || genreInput == null) {
+			System.out.println("Please input a name and genre");
+			return null;
+		}
+		
+		Object newComic = us.pickComic(loggedUser, comicName, genreInput);
+		return newComic;
+		
+	}
+
 
 
 

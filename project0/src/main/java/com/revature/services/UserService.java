@@ -51,14 +51,17 @@ public class UserService {
 	
 	List<ComicObj> comics = invDAO.getComics();
 	 choice = invDAO.getComicByName(comicName);
-	if (choice.getName() != comics.get(comics.size()).getName()) {
-		System.out.println("Sorry, that comic isn't available!");
-		return null;
-	}
+//	if (choice.getName() != comics.get(comics.size()).getName()) {
+//		System.out.println("Sorry, that comic isn't available!");
+//		return null;
+//	}
 	// how do i set the new comic?
+	 System.out.println("Choice: "+ choice);
+	 System.out.println("Comics "+ comics);
+	 System.out.println("Collection: "+ user.getCollection());
 	choice.setGenre(genre);
-	choice.setId((long) user.getCollection().size());
 	user.getCollection().add(choice);
+	choice.setId((long) user.getCollection().size());
 	ud.writeToFile();
 	
 	return choice;
