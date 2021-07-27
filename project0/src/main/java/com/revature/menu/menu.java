@@ -137,12 +137,7 @@ public class Menu {
 				
 				case 3: 
 					System.out.println("Retrieving Account Info");
-					String name = loggedUser.getUsername();
-					String email = loggedUser.getEmail();
-					String superhero = loggedUser.getSuperhero();
-					String comicBook = loggedUser.getComic();
-					
-					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
+					getUser(loggedUser);
 					break;
 				case 4: 
 					System.out.println("Here are the current comics");
@@ -172,6 +167,14 @@ public class Menu {
 		int choice = select();
 		return choice;
 	}
+	public void getUser(User loggedUser) {
+		String name = loggedUser.getUsername();
+		String email = loggedUser.getEmail();
+		String superhero = loggedUser.getSuperhero();
+		String comicBook = loggedUser.getComic();
+		
+		System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
+	}
 	
 	
 	//Manager Portal 
@@ -192,12 +195,7 @@ public class Menu {
 				
 				case 3: 
 					System.out.println("Retrieving Account Info");
-					String name = loggedUser.getUsername();
-					String email = loggedUser.getEmail();
-					String superhero = loggedUser.getSuperhero();
-					String comicBook = loggedUser.getComic();
-					
-					System.out.println("Username: "+ name + ", email:" + email + ", favorite Superhero:" + superhero + ", and favorite comic: " + comicBook + "");
+					getUser(loggedUser);
 					break;
 					
 				case 4: 
