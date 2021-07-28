@@ -11,7 +11,7 @@ public interface UserSerInterface {
 	 
 	 String emailLogin(String email);
 	 
-	 User getAll();
+	 String getAll();
 	 
 	 List<ComicObj> getCurCollection(User user);
 	 

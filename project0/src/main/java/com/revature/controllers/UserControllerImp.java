@@ -122,7 +122,7 @@ public class UserControllerImp implements UserController{
 		}
 		
 		try {
-		User allUsers = uService.getAll();
+		String allUsers = uService.getAll();
 		ctx.json(allUsers);
 		
 		}catch (Exception e) {
@@ -130,6 +130,22 @@ public class UserControllerImp implements UserController{
 		 e.printStackTrace(); 
 		 log.error("Failed to load Users"+e);
 		}
+		
+	}
+	
+	@Override
+	public void getUserInfo(Context ctx) {
+		User loggedUser = ctx.sessionAttribute("loggedUser");
+		String username= loggedUser.getUsername();
+		
+		if(loggedUser == null || !loggedUser.getUsername().equals(username)) {
+			ctx.status(403);
+			log.error("Error with user (either null or accessing other user account)");
+			return;
+		}
+		String userInfo = uService.getUserInfo(loggedUser.getUsername());
+		
+		ctx.json(userInfo);
 		
 	}
 

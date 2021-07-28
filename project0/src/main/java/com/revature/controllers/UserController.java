@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import com.revature.beans.ComicObj;
+
 import io.javalin.http.Context;
 
 public interface UserController {
@@ -27,4 +29,8 @@ public interface UserController {
 		
 		//returns inventory
 		void getComics(Context ctx);
+//
+
+
+		void getUserInfo(Context ctx);
 }

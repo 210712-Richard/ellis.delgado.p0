@@ -29,9 +29,9 @@ public class UserService implements UserSerInterface{
 		String e = ud.getEmail(email);
 		return e;
 	}
-	public User getAll() {
+	public String getAll() {
 		User all = (User) ud.getUsers();
-		return all;
+		return all.toString();
 	}
 	public List<ComicObj> getCurCollection(User user){
 		List<ComicObj> curCollection = comDAO.getComics();
@@ -54,6 +54,10 @@ public class UserService implements UserSerInterface{
 		log.debug(u);
 		return u;
 		
+	}
+	public String getUserInfo(String name) {
+		User u = ud.getUser(name);
+		return u.toString();
 	}
 	
 	public ComicObj pickComic(User user, String comicName) {
