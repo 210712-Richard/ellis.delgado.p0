@@ -2,7 +2,7 @@ package com.revature;
 
 //import com.revature.controllers.UserController;
 ////import com.revature.menu.Menu;
-import com.revature.controllers.UserControllerImp;
+import com.revature.controllers.UserController;
 
 import io.javalin.Javalin;
 public class Driver {
@@ -17,7 +17,7 @@ public class Driver {
 		//creating local host connection
 		Javalin app = Javalin.create().start(8080);
 		
-		UserControllerImp uCont = new UserControllerImp();
+		UserController uCont = new UserController();
 		app.get("/", (ctx)-> ctx.html("Javalin is working"));
 		//login
 		app.post("/users", uCont::login);
