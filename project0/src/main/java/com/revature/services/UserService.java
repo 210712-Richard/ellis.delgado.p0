@@ -30,8 +30,8 @@ public class UserService implements UserSerInterface{
 		return e;
 	}
 	public String getAll() {
-		User all = (User) ud.getUsers();
-		return all.toString();
+		String all =  ud.getUsers().toString();
+		return all;
 	}
 	public List<ComicObj> getCurCollection(User user){
 		List<ComicObj> curCollection = comDAO.getComics();
