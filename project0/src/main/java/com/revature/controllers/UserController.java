@@ -160,14 +160,30 @@ public class UserController {
 		
 	}
 	
-//	@Override
-//	public ComicObj addComicToInv(ComicObj comic) {
-//		comic.setName(null);
-//		
-//	}
+	public void addComicToInv(Context ctx) {
+		
+		
+		User loggedUser = ctx.sessionAttribute("loggedUser");
+		String username= ctx.pathParam("username");
+		String comicName = ctx.pathParam("comicName");
+		String genre = ctx.pathParam("genre");
+		
+		
+		if(loggedUser == null || !loggedUser.getType().equals(UserType.Manager)|| !loggedUser.getUsername().equals(username)) {
+			ctx.status(403);
+			log.error("Error with user (either null or accessing other user account)");
+			return;
+		}
+		ComicObj comic = uService.addComicToInv(comicName, genre);;
+			if (comic == null) {
+				ctx.status(402);
+				log.error("Failed to add comic to collection"+ comic);
+			}else {
 
-	
-	
-	
+		ctx.json(comic);
+			}
+		
+	}
+
 
 }

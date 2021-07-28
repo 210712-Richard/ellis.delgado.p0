@@ -2,9 +2,11 @@ package com.revature.services;
 
 import java.util.List;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.revature.beans.ComicBook;
 import com.revature.beans.ComicObj;
 
 import com.revature.beans.User;
@@ -74,9 +76,16 @@ public class UserService {
 	return choice;
 	}
 	
-//	public ComicObj addComicToInv(ComicObj comic) {
-//		ComicObj newComic = invDAO.addComic(comic);
-//		return newComic;
-//	}
+	public ComicObj addComicToInv(String comicName, String genre) {
+		ComicObj newComic = new ComicBook();
+		newComic.setName(comicName);
+		newComic.setGenre(genre);
+		invDAO.addComic(newComic);
+		newComic.setId((long) invDAO.getComics().size());
+		invDAO.writeToFile();
+		return newComic;
+		
+		
+	}
 	
 }

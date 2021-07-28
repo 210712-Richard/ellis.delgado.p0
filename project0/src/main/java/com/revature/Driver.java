@@ -32,8 +32,9 @@ public class Driver {
 		//view inventory
 		app.get("/users/inventory", uCont::getComics);
 		// select from inventory
-		app.post("/users/:username/inventory/:comicName", uCont::pickComic);
+		app.put("/users/:username/inventory/:comicName", uCont::pickComic);
 		
+		app.put("/users/:username/inventory/add/:comicName/:genre", uCont::addComicToInv);
 	}
 
 }
