@@ -23,7 +23,7 @@ public class UserServiceTest {
 		@BeforeAll
 		public static void setUpClass() {
 			user = new User();
-			user.setUsername("Test");
+			user.setUsername("Bob");
 
 		}
 		@BeforeEach
