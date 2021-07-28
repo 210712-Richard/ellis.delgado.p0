@@ -18,4 +18,8 @@ public interface UserSerInterface {
 	 User register(String username, String email, String superhero, String comic);
 	 
 	 ComicObj pickComic(User user, String comicName);
+	 
+//	 ComicObj addComicToInv(ComicObj comic);
+	 
+	
 }

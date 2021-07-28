@@ -70,6 +70,9 @@ public class UserService implements UserSerInterface{
 	return choice;
 	}
 	
-
+//	public ComicObj addComicToInv(ComicObj comic) {
+//		ComicObj newComic = invDAO.addComic(comic);
+//		return newComic;
+//	}
 	
 }

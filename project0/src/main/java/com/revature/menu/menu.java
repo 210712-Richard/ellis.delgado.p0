@@ -1,12 +1,12 @@
 package com.revature.menu;
 
 import java.util.List;
+
 import java.util.Scanner;
 
 
 
 import com.revature.beans.ComicObj;
-import com.revature.beans.Inventory;
 import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.data.InventoryDAO;

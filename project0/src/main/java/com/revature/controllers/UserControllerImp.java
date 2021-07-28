@@ -141,6 +141,12 @@ public class UserControllerImp implements UserController{
 		ctx.json(inventory);
 		
 	}
+	
+//	@Override
+//	public ComicObj addComicToInv(ComicObj comic) {
+//		comic.setName(null);
+//		
+//	}
 
 	
 	

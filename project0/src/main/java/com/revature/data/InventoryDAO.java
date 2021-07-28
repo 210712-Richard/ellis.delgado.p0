@@ -40,9 +40,10 @@ public class InventoryDAO {
 		}
 		
 	}
-	public void addComic(ComicObj comic) {
+	public ComicObj addComic(ComicObj comic) {
 		comic.setId((long)comics.size());
 		comics.add(comic);
+		return comic;
 	}
 	public List<ComicObj> getComics(){
 		return comics;
