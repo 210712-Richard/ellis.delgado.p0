@@ -10,6 +10,10 @@ import org.mockito.Mockito;
 import com.revature.beans.*;
 import com.revature.data.*;
 
+import jdk.internal.org.jline.utils.Log;
+
+import org.apache.logging.log4j.*;
+
 public class UserServiceTest {
 
 		private static UserService service;
@@ -70,4 +74,14 @@ public class UserServiceTest {
 			service.getCurCollection(user);
 			Mockito.verify(service.comDAO).getComics();
 		}
+//		@Test
+//		public void testGetUserInfo() {
+//			String username= "Bob";
+//			
+//			System.out.println("username"+username);
+//			
+//			service.getUserInfo(username);
+//			
+//			Mockito.verify(service.ud).getUser(username).toString();
+//		}
 }
